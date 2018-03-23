@@ -1,3 +1,4 @@
+
 # POSCAR2TikZPic
 
 Any information please contact dianwuwang@163.com
@@ -15,6 +16,7 @@ Usage:
 3.Aftering running the code, you'll obtain an output file wihch contains the TikZ code of the model. Copy the TikZ code into the .tex file that you are working with(don't forget to write \usepackage{tikz} in the preamble of your .tex document) and compile the .tex file. 
 
 Note:
+
 1.The positions of POSCAR file should be given in direct(fractional) coordiantes
 
 2.The POSCAR file in current repository is only an example file.
