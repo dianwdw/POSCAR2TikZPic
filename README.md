@@ -13,3 +13,6 @@ Usage:
 2.User can specify: the name of the input POSCAR format file, the Eulerian angles(phi,theta,kappa), viewing direction(x/y/z), element radius and element color. User can also decide: whether to draw mirror atoms at periodic boundaries, whether to draw axis indicator, the size of the axis indicator and the reference width of the TikZ picture;
 
 3.Aftering running the code, you'll obtain an output file wihch contains the TikZ code of the model. Copy the TikZ code into the .tex file that you are working with(don't forget to write \usepackage{tikz} in the preamble of your .tex document) and compile the .tex file. 
+
+Note:
+The POSCAR file in current repository is only an example file.
