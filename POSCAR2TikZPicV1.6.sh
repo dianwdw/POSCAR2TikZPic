@@ -89,6 +89,7 @@ fi
 ###################################################
 # Extract information from the input POSCAR file
 ###################################################
+echo "The positions of POSCAR file should be given in direct(fractional) coordiantes"
 echo "Information for input POSCAR file:"
 
 #-Get number of element species
@@ -129,9 +130,13 @@ echo "Ntot= " $Ntot
 echo "------------------------------------"
 echo $NSys
 
-L[1]=$(sed -n '3p' ${InputCoords} | awk '{print $1}')
-L[2]=$(sed -n '4p' ${InputCoords} | awk '{print $2}')
-L[3]=$(sed -n '5p' ${InputCoords} | awk '{print $3}')
+UniScaleFac=$(sed -n '2p' ${InputCoords} | awk '{print $1}')
+BL[1]=$(sed -n '3p' ${InputCoords} | awk '{print $1}')
+BL[2]=$(sed -n '4p' ${InputCoords} | awk '{print $2}')
+BL[3]=$(sed -n '5p' ${InputCoords} | awk '{print $3}')
+L[1]=$(echo "scale=6;${BL[1]}*($UniScaleFac)" | bc)
+L[2]=$(echo "scale=6;${BL[2]}*($UniScaleFac)" | bc)
+L[3]=$(echo "scale=6;${BL[3]}*($UniScaleFac)" | bc)
 
 #Define rotation center
 RotCenter[1]=$(echo "scale=6;${L[1]} / 2" | bc)
